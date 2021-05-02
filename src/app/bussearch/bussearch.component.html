@@ -1,0 +1,63 @@
+<h3>Travel Details</h3>
+
+<form #search="ngForm" (ngSubmit)="onClickSearch(search.value)">
+  <div class="row">
+    <div class="form-group col-md-3">
+      <label>Source</label>
+      <select class="custom-select" value="s" name="s"  [(ngModel)]="source" required ngModel class="form-control">
+        <option *ngFor="let source of sources">{{source}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-3">
+      <label>Destination</label>
+      <select class="custom-select" value="d" name="d"  [(ngModel)]="destination" required ngModel class="form-control">
+        <option *ngFor="let destination of destinations">{{destination}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>Journey Date</label>
+      <input type="date" required class="form-control" ngModel name="jdate">
+    </div>
+  <div class="form-group col-md-3">  
+    <br>  
+<button type="submit" class="btn btn-primary">Check</button>  
+    </div>    
+  </div>
+</form> 
+  
+<div *ngFor="let b of bus?.busdetails">
+  <ng-container *ngIf="source == b.Source && destination == b.Destination">
+<div id=content>
+  <div>
+<span id=a>{{b.TN}}</span>
+<span id=b>{{b.DA}}</span>
+<span id=c>{{b.TT}}</span>
+<span id=d>{{b.Rating}}</span>
+<span id=e>{{b.Price | currency:'INR'}}</span>
+<span id=f>{{b.Features}}</span>
+<br>
+<br>
+<input type="number"  value="no" placeholder="No of Passengers" (change)="onChange($event)">
+<!-- <input type="radio"  [value]="b.ID" name="{{b.ID}}" ngModel (change)="onItemChange($event.target.value)"> -->
+
+<input type="radio" name="{{b.ID}}" value="{{b.ID}}" id="{{b.ID}}" (change)="onItemChange(b.ID)">
+
+</div>  
+</div>
+</ng-container></div>
+<button class="btn btn-danger" [routerLink]="['']">Cancel</button>  
+<button class="btn btn-primary" [routerLink]="['passenger']" (click)="onBook()">
+Book Ticket
+</button>
+<!-- <app-passenger></app-passenger> -->
+<!-- div class="row">
+  <div class="col-md-12" style="border:2px solid black">
+    
+  </div>
+  <br>
+  <div class="col-md-12"  style="border:2px solid black">
+    
+  </div>
+</div> -->
+<!-- <app-passenger [valu]="val"></app-passenger> -->

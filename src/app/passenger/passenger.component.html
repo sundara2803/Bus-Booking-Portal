@@ -1,0 +1,98 @@
+<h3>Passenger Details</h3>
+<div>
+ <Pre>
+ <span>{{newservice.bd[0].source}}</span> to
+  <span>{{newservice.bd[0].destination}}</span>
+  <span>{{newservice.bd[0].busName}}</span>
+  <span>{{newservice.bd[0].journyDate}}</span>
+  <span>{{newservice.bd[0].totalTime}}</span>
+  <span>{{newservice.bd[0].price}}</span> </Pre>
+</div>
+<div [formGroup]="formGroup"> 
+<!--   <div formArrayName="nums"> -->
+    <div *ngFor="let num of nums; let i = index" formGroupName="{{i}}" class="row">
+      <!-- <div *ngFor="let num of nums" class="row"> -->
+      <div class="form-group col-md-2">
+        <label>Passenger Name</label>
+        <input type="text" [class.in.invalid]="formGroup.get(name).invalid && formGroup.get(name).touched" class="form-control" formControlName="name">
+        <small  [class.d-none]="formGroup.get(name).valid || formGroup.get(name).untouched" class="text-danger">passenger name is required</small>
+      </div>
+      <div class="form-group col-md-2">
+        <label>Date of Birth</label>
+              <input type="date"  #dob (change)="calculateAge(dob.value)"  formControlName="dob" class="form-control">
+          </div>
+          <div class="form-group col-md-2">
+            <label>Age</label>
+              <input type="number" [(ngModel)]="age"  readonly class="form-control"  formControlName="age">
+          </div>
+          <div class="form-group col-md-2">
+            <label>Gender</label>
+            <select class="custom-select"  [class.in.invalid]="formGroup.get(ge).invalid && formGroup.get(ge).touched" ngModel formControlName="ge">   
+            <option value="Male">Male</option> 
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+          </select>
+        <small  [cla  ss.d-none]="formGroup.get(ge).valid || formGroup.get(ge).untouched" class="text-danger">passenger gender is required</small>
+        </div>
+        <div class="form-group col-md-2">
+          <label>Select seat</label>
+          <select class="custom-select"   [class.in.invalid]="formGroup.get(se).invalid && formGroup.get(se).touched" ngModel formControlName="se">  
+          <option value="UB">UB-Sleeper</option> 
+          <option value="LB">LB-Seater</option>
+        </select>
+        <small  [class.d-none]="formGroup.get(se).valid || formGroup.get(se).untouched" class="text-danger">select selection is required</small>
+      </div>
+      <div class="form-group col-md-2">
+        <label>Price</label>
+        <input type="number"  class="form-control" formControlName="newservice.bd[0].price" ngModel>
+      </div>
+    </div>
+</div>
+<button class="btn btn-danger" [routerLink]="['']">Cancel</button>    
+<button class="btn btn-primary" (click)=busBooked()>Book</button>
+<!-- <div *ngFor="let num of nums">
+  <div>
+  <form [formGroup]="formGroup">
+    {{formGroup|json}}
+    <div formGroupName="passenger" class="row">
+      <div class="form-group col-md-2">
+        <label>Passenger Name</label>
+        <input type="text" [class.in.invalid]="formGroup.get(name).invalid && formGroup.get(name).touched" class="form-control" formControlName="name">
+        <small  [class.d-none]="formGroup.get(name).valid || formGroup.get(name).untouched" class="text-danger">passenger name is required</small>
+      </div>
+      <div class="form-group col-md-2">
+        <label>Date of Birth</label>
+              <input type="date" (change)="calculateAge(dob)" formControlName="dob" class="form-control">
+          </div>
+          <br>
+          <div class="form-group col-md-2">
+            <label>Age</label>
+              <input type="number"  readonly class="form-control" formControlName="age">
+          </div>
+      <div class="form-group col-md-2">
+          <label>Gender</label>
+          <select class="custom-select"  [class.in.invalid]="formGroup.get(ge).invalid && formGroup.get(ge).touched" ngModel formControlName="ge">   
+          <option value="Male">Male</option> 
+          <option value="Female">Female</option>
+          <option value="Others">Others</option>
+        </select>
+        <small  [class.d-none]="formGroup.get(ge).valid || formGroup.get(ge).untouched" class="text-danger">passenger gender is required</small>
+      </div>
+      <div class="form-group col-md-2">
+      <label>Select seat</label>
+      <select class="custom-select"   [class.in.invalid]="formGroup.get(se).invalid && formGroup.get(se).touched" ngModel formControlName="se">  
+      <option value="UB">UB-Sleeper</option> 
+      <option value="LB">LB-Seater</option>
+    </select>
+    <small  [class.d-none]="formGroup.get(se).valid || formGroup.get(se).untouched" class="text-danger">select selection is required</small>
+  </div>
+      <div class="form-group col-md-2">
+        <label>Price</label>
+        <input type="number" [(ngModel)]="newservice.bd[0].price" class="form-control" formControlName="price" ngModel>
+      </div>
+      </div>
+  </form>
+</div>
+</div> -->
+
+

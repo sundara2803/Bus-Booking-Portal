@@ -1,0 +1,66 @@
+[{
+  "ID":"001",
+  "Travel Name": "Parveen Travels",
+  "Departure Arrival":"10:00 PM - 5.00 AM",
+  "Total Time":7,
+  "Rating":4.5,
+  "Price":700,
+  "Feautures":"AC Plug Tracking",
+  "Source":"Chennai",
+  "Destination":"Madurai"
+},
+{
+  "ID":"002",
+  "Travel Name": "SRM Travels",
+  "Departure Arrival":"11:00 PM - 7.00 AM",
+  "Total Time":8,
+  "Rating":4,
+  "Price":600,
+  "Feautures":"AC Plug Tracking",
+  "Source":"Chennai",
+  "Destination":"Madurai" 
+},
+{
+  "ID":"003",
+  "Travel Name": "KPN Travels",
+  "Departure Arrival":"10:00 PM - 5.00 AM",
+  "Total Time":7,
+  "Rating":4.2,
+  "Price":650,
+  "Feautures":"Plug Tracking",
+  "Source":"Madurai",
+  "Destination":"Chennai"
+},
+{
+  "ID":"004",
+  "Travel Name": "Javavilas Travels",
+  "Departure Arrival":"6:00 PM - 11.00 PM",
+  "Total Time":5,
+  "Rating":4,
+  "Price":300,
+  "Feautures":"Plug",
+  "Source":"Madurai",
+  "Destination":"Trichy"
+},
+{
+  "ID":"005",
+  "Travel Name": "vivegam Travels",
+  "Departure Arrival":"8:00 AM - 11.00 AM",
+  "Total Time":3,
+  "Rating":3.5,
+  "Price":350,
+  "Feautures":"Plug Tracking",
+  "Source":"Trichy",
+  "Destination":"Madurai"
+},
+{
+  "ID":"006",
+  "Travel Name": "Amarnath Travels",
+  "Departure Arrival":"10:00 AM - 4.00 AM",
+  "Total Time":7,
+  "Rating":4.5,
+  "Price":500,
+  "Feautures":"AC Plug",
+  "Source":"Trichy",
+  "Destination":"Chennai"
+}]
